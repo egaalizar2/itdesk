@@ -1,0 +1,310 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><title>CGN IT-Desk</title>
+<meta name="theme-color" content="#0B1329">
+<link rel="manifest" href='data:application/manifest+json,{"name":"CGN IT-Desk","short_name":"IT-Desk","start_url":".","display":"standalone","background_color":"%23F8FAFC","theme_color":"%230B1329","icons":[]}'>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<style>
+@keyframes sh{to{background-position:-200% 0}}
+#W{position:fixed;inset:0;z-index:999999;display:flex;background:#F8FAFC;color:#475569;font:400 clamp(.8125rem,.78rem + .15vw,.9375rem)/1.45 Inter,system-ui,sans-serif;overflow:hidden;
+*{box-sizing:border-box}img{max-width:100%;height:auto}[hidden]{display:none!important}
+h1,h2,h3{color:#0F172A;margin:0 0 0.375rem}h1{font-size:clamp(1.1rem,4.5vw,1.4rem);display:flex;gap:0.5rem;align-items:center}h3{font-size:0.875rem}
+.lucide{width:16px;height:16px}
+.sb{width:205px;background:#0B1329;display:flex;flex-direction:column;color:#CBD5E1;flex:none;overflow-y:auto;scrollbar-width:none;font-size:0.75rem}.sb::-webkit-scrollbar{display:none}.sb .lucide{width:15px;height:15px}.sb.cl{display:none}
+.logo{padding:0.75rem 0.875rem;border-bottom:1px solid #ffffff1a;color:#fff;display:flex;align-items:center;gap:0.625rem}.logo img{height:30px;background:#fff;border-radius:8px;padding:0.1875rem 0.375rem}.logo b{display:block;font-size:1.0625rem;font-weight:800;line-height:1.1}.logo small{display:block;color:#93C5FD;font-size:0.5625rem;letter-spacing:.12em}
+.sb h6{margin:clamp(0.5rem,1.6vh,1rem) 1rem 0.25rem;font-size:0.625rem;color:#94A3B8;letter-spacing:.08em}
+.it{display:flex;gap:0.5625rem;align-items:center;padding:clamp(0.3125rem,1vh,0.5rem) 0.75rem;margin:0.0625rem 0.5rem;border-radius:6px;cursor:pointer}.it:hover{background:#ffffff12}.it.on{background:#2563EB;color:#fff}
+.mn{flex:1;display:flex;flex-direction:column;min-width:0}
+.hd{height:54px;background:#0B1329;color:#fff;display:flex;align-items:center;gap:0.75rem;padding:0 1rem;flex:none}.sp{flex:1}
+.hb{background:#ffffff12;border:1px solid #ffffff22;color:#fff;border-radius:8px;padding:0.375rem 0.5rem;cursor:pointer}
+.chip{background:#ffffff12;border:1px solid #ffffff22;border-radius:8px;padding:0.3125rem 0.625rem;font-size:0.75rem}.chip code{color:#60A5FA;font-family:ui-monospace,monospace}
+.pv{background:#F59E0B;color:#fff;border-radius:6px;padding:0.1875rem 0.5rem;font-size:0.6875rem;font-weight:700}
+.av{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#EC4899,#E11D48);color:#fff;display:grid;place-items:center;font-weight:700;font-size:0.75rem}
+.pf{display:flex;gap:0.5rem;align-items:center;cursor:pointer;font-size:0.75rem;line-height:1.2}.rb{background:#7C3AED;color:#fff;border-radius:4px;padding:0.0625rem 0.375rem;font-size:0.5625rem;font-weight:700}
+.dd{display:none;position:absolute;right:0;top:44px;width:230px;background:#fff;color:#475569;border-radius:12px;box-shadow:0 12px 32px #0003;padding:0.5rem;z-index:5}.dd.sh{display:block}.dd div{padding:0.5625rem 0.625rem;border-radius:8px;cursor:pointer;display:flex;gap:0.5rem;align-items:center}.dd div:hover{background:#F1F5F9}
+.ct{flex:1;overflow:auto;padding:clamp(.75rem,3vw,1.5rem)}
+.card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;box-shadow:0 1px 2px #0000000d;padding:1rem}
+.g{display:grid;gap:1rem}.k{grid-template-columns:repeat(auto-fit,minmax(9rem,1fr))}.c3{grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))}
+.kp{text-align:center}.kp b{font-size:clamp(1.3rem,5vw,1.7rem);color:#0F172A}.kp small{display:block;color:#64748B;font-weight:600;font-size:0.6562rem;text-transform:uppercase}.kp hr{border:0;border-top:1px solid #F1F5F9}
+.ic{width:34px;height:34px;border-radius:8px;display:inline-grid;place-items:center;vertical-align:middle;margin-right:8px}
+.bar{display:flex;align-items:center;gap:0.625rem;margin-bottom:12px;flex-wrap:wrap}.row{display:flex;gap:0.5rem;justify-content:flex-end;margin-top:8px}
+.btn{background:#2563EB;color:#fff;border:0;border-radius:8px;padding:0.5rem 0.875rem;font:inherit;font-weight:600;cursor:pointer}.btn.g2{background:#fff;color:#475569;border:1px solid #E2E8F0}.btn.rd{background:#EF4444}
+input,select,textarea,.ed{width:100%;border:1px solid #E2E8F0;border-radius:8px;padding:0.5rem 0.625rem;font:inherit;background:#fff;color:#0F172A;margin:0.25rem 0 0.625rem}
+.ed{min-height:110px;margin:0 0 0.625rem;border-top-left-radius:0;border-top-right-radius:0}.tb{display:flex;gap:0.25rem;margin-top:4px}.tb button{border:1px solid #E2E8F0;background:#F8FAFC;border-radius:6px 6px 0 0;padding:0.1875rem 0.625rem;cursor:pointer}
+table{width:100%;border-collapse:collapse}th{text-align:left;font-size:0.6875rem;text-transform:uppercase;color:#94A3B8;padding:0.5rem;white-space:nowrap}td{padding:0.5625rem 0.5rem;border-top:1px solid #F1F5F9;font-size:0.7812rem;vertical-align:middle}td small{font-size:0.6875rem}td .btn{padding:0.25rem 0.625rem;font-size:0.7188rem}.mlogo{display:none;align-items:center;gap:0.5rem;color:#fff;font-weight:800}.mlogo img{height:24px;background:#fff;border-radius:6px;padding:0.125rem 0.3125rem}.g.k.tp{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}tr[data-a]{cursor:pointer}tr[data-a]:hover{background:#F8FAFC}
+.bd{display:inline-flex;align-items:center;gap:0.3125rem;border-radius:99px;padding:0.125rem 0.5625rem;font-size:0.6875rem;font-weight:600}.bd i{width:6px;height:6px;border-radius:50%}
+.tabs{display:inline-flex;background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:0.25rem;gap:0.125rem;flex-wrap:wrap}.tabs span{padding:0.375rem 0.75rem;border-radius:8px;font-size:0.6875rem;font-weight:600;cursor:pointer;text-transform:uppercase}.tabs .on{background:#2563EB;color:#fff}
+.kbn{display:grid;grid-template-columns:repeat(4,minmax(230px,1fr));gap:0.75rem;overflow:auto;align-items:start}.kc{background:#EEF2F7;border-radius:12px;padding:0.5rem;min-height:200px;display:grid;gap:0.5rem;align-content:start}.kh{background:#fff;border-radius:8px;padding:0.5rem;font-weight:700;color:#0F172A}.kcd{cursor:grab;padding:0.625rem}
+.cm{border-left:3px solid #2563EB;background:#F8FAFC;padding:0.5rem 0.75rem;margin:0.5rem 0;border-radius:8px}.cm.in{background:#FEF9C3;border-color:#EAB308}.ds ul{margin:0.25rem 0;padding-left:20px}
+.emp{text-align:center;padding:1.875rem;color:#94A3B8}.emp .lucide{width:40px;height:40px}
+.sk{height:90px;border-radius:12px;background:linear-gradient(90deg,#E2E8F0 25%,#F1F5F9 50%,#E2E8F0 75%);background-size:200%;animation:sh 1.2s infinite}
+.dn{width:130px;height:130px;border-radius:50%;margin:0.5rem auto;display:grid;place-items:center;position:relative}.dn:after{content:"";position:absolute;inset:26px;background:#fff;border-radius:50%}.dn b{position:relative;z-index:1;font-size:1.375rem;color:#0F172A}
+.br{display:grid;grid-template-columns:90px 1fr 24px;gap:0.5rem;align-items:center;margin:0.5rem 0}.br i{height:8px;background:#EF4444;border-radius:9px;display:block}
+.qa{cursor:pointer}.qa:hover,.ur:hover{border-color:#2563EB}.ur{cursor:pointer}.sg{padding:0.5rem;border-radius:8px;cursor:pointer}.sg:hover{background:#F1F5F9}
+.stars{font-size:2rem;cursor:pointer;text-align:center}.ph{display:flex;gap:0.5rem;flex-wrap:wrap;margin:0.375rem 0}.ph span{position:relative}.ph img{height:70px;width:70px;object-fit:cover;border-radius:8px;border:1px solid #E2E8F0;cursor:pointer}.ph em{position:absolute;top:-6px;right:-6px;background:#EF4444;color:#fff;border-radius:50%;width:18px;height:18px;text-align:center;font-style:normal;cursor:pointer;line-height:18px}
+.ov{position:fixed;inset:0;background:#0F172A66;display:grid;place-items:center;backdrop-filter:blur(2px);z-index:8}.md{background:#ffffffee;backdrop-filter:blur(16px);border-radius:16px;padding:1.25rem;width:min(480px,92vw);max-height:90vh;overflow:auto;box-shadow:0 20px 50px #0004}
+.ts{position:fixed;top:64px;right:16px;background:#059669;color:#fff;padding:0.625rem 0.875rem;border-radius:10px;z-index:9;box-shadow:0 6px 20px #0003}.ts.er{background:#DC2626}
+.lg{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 20% 20%,#DBEAFE,#F8FAFC 60%)}.lc{width:min(380px,92vw);background:#ffffffb3;backdrop-filter:blur(18px);text-align:center}.lgo{margin-bottom:12px}.lgo img{height:64px;display:block;margin:0 auto 0.375rem}.lgo b{display:block;font-size:1.5rem;color:#0F172A}.lgo small{font-size:0.6875rem;color:#64748B;letter-spacing:.15em}
+.bn{display:none;position:fixed;left:12px;right:12px;bottom:12px;background:#ffffffcc;backdrop-filter:blur(14px);border:1px solid #E2E8F0;border-radius:18px;padding:0.375rem;box-shadow:0 8px 24px #0002;overflow-x:auto;z-index:4}.bn div{flex:none;display:flex;flex-direction:column;align-items:center;font-size:0.625rem;padding:0.375rem 0.75rem;border-radius:12px}.bn .on{color:#2563EB;background:#EFF6FF}
+@media(max-width:1024px){.sb{width:180px}.ct{padding:1.125rem}}
+@media(max-width:899px){.sb{position:fixed;inset:0 auto 0 0;z-index:7;width:min(16rem,82vw);transform:translateX(-100%);transition:transform .2s;font-size:.875rem}.sb.open{transform:none;box-shadow:0 0 40px #0008}.sbo{position:fixed;inset:0;background:#0F172A66;z-index:6}.mlogo{display:flex}.sp2{grid-template-columns:1fr!important}.dd{max-width:calc(100vw - 1.5rem)}}
+@media(min-width:900px){.sbo,.mlogo{display:none!important}}
+@media(max-width:700px){.g.k:has(.ur){grid-template-columns:1fr}}
+@media(pointer:coarse){.btn,.it,.hb{min-height:2.75rem}.tabs span{min-height:2.5rem;display:flex;align-items:center}}
+@media(max-width:768px){.chip{display:none}.bn{display:flex;bottom:calc(10px + env(safe-area-inset-bottom));scrollbar-width:none}.bn::-webkit-scrollbar{display:none}.mlogo{display:flex}
+.ct{padding:0.875rem 0.875rem 6.25rem}.hd{padding:0 0.75rem;gap:0.5rem}.hd .pv{font-size:0.5625rem;padding:0.125rem 0.3125rem}.pf>span:last-child{display:none}.sp2{grid-template-columns:1fr!important}
+h1{font-size:1.125rem}input,select,textarea,.ed{font-size:1rem}.bar>select,.bar>input{flex:1 1 130px;min-width:0;width:auto!important}
+.kbn{grid-template-columns:repeat(4,82vw);scroll-snap-type:x mandatory}.kc{scroll-snap-align:start}
+.tc{background:none;border:0;box-shadow:none;padding:0}
+table.rs,table.rs tbody,table.rs tr,table.rs td{display:block;width:100%}table.rs tr.hr{display:none}
+table.rs tr{border:1px solid #E2E8F0;border-radius:12px;padding:0.375rem 0.75rem;margin-bottom:10px;background:#fff}
+table.rs td{border:0;padding:0.25rem 0;display:flex;justify-content:space-between;align-items:center;gap:0.75rem;text-align:right}
+table.rs td::before{content:attr(data-l);font-size:0.6875rem;font-weight:600;color:#94A3B8;text-transform:uppercase;text-align:left;flex:none}
+table.rs td[data-l=""]{justify-content:flex-end;border-top:1px solid #F1F5F9;margin-top:4px;padding-top:8px}
+.md{padding:1rem}}
+}
+</style></head><body><div id="W"></div>
+<script type="module">
+// KONFIGURASI APLIKASI
+const IS_PREVIEW = false; // Ubah menjadi false SAAT DEPLOY agar mode preview & data dummy hilang dan terhubung 100% ke Supabase
+const SUPABASE_URL = "https://joxvviwfociscvoghwhb.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_b830j8I7ixWixXhYd3jW1w_yLqlXOVw";
+const sb = IS_PREVIEW ? null : (await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm')).createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+const LOGO = "data:image/png;base64,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";
+// PWA (service worker dibuat via Blob)
+try { if ('serviceWorker' in navigator) navigator.serviceWorker.register(URL.createObjectURL(new Blob(["self.addEventListener('fetch',()=>{})"], { type: 'text/javascript' }))).catch(() => {}); } catch (e) {}
+
+const $ = s => document.querySelector(s), root = $('#W');
+const UC = 'id,username,nama,email,telepon,role,department,lokasi,aktif,created_at', CL = { app_users: UC }, col = t => CL[t] || '*';
+const D = IS_PREVIEW ? {
+  app_users: [{ id: 1, username: 'admin', password_hash: 'admin', nama: 'Administrator IT', role: 'admin', department: 'IT', aktif: true, created_at: '2026-10-01' }, { id: 2, username: 'budi', password_hash: 'budi', nama: 'Budi Santoso', role: 'enduser', department: 'Weaving', lokasi: 'Gedung A', telepon: '0812', aktif: true, created_at: '2026-10-02' }],
+  assets: [{ id: 1, kode: 'PC-0045', tipe: 'PC', merek: 'Dell OptiPlex', spesifikasi: 'i5/8GB/Win11', owner_id: 2, created_at: '2026-10-02' }],
+  tickets: [{ id: 1, no_tiket: 'TKT-00001', tipe: 'incident', judul: 'Printer lantai 2 tidak bisa mencetak', deskripsi: 'Printer error sejak pagi', kategori: 'Printer', subkategori: 'Tidak mencetak', prioritas: 'high', status: 'open', requester_id: 2, assignee_id: null, asset_id: 1, due_resolusi: new Date(Date.now() + 7 * 36e5).toISOString(), created_at: new Date().toISOString() }],
+  ticket_comments: [], ticket_attachments: [], csat_ratings: [],
+  kb_articles: [{ id: 1, judul: 'Cara reset password email', kategori: 'Email', isi: 'Buka portal email, pilih Lupa Password, lalu ikuti instruksi.', created_at: '2026-10-01' }]
+} : null;
+let ID = 100;
+const db = {
+  async sel(t, o = {}) {
+    if (IS_PREVIEW) return D[t].filter(r => Object.entries(o.eq || {}).every(([k, v]) => r[k] == v)).map(r => ({ ...r }));
+    let q = sb.from(t).select(col(t)); for (const [k, v] of Object.entries(o.eq || {})) q = q.eq(k, v);
+    const { data, error } = await q.order('created_at', { ascending: false }); if (error) throw error; return data;
+  },
+  async ins(t, r) {
+    if (IS_PREVIEW) { r = { id: ++ID, created_at: new Date().toISOString(), ...(t == 'tickets' ? { no_tiket: 'TKT-' + String(ID).padStart(5, '0') } : {}), ...r }; D[t].push(r); return r; }
+    const { data, error } = await sb.from(t).insert(r).select(col(t)).single(); if (error) throw error; return data;
+  },
+  async upd(t, id, r) { if (IS_PREVIEW) { Object.assign(D[t].find(x => x.id == id), r); return; } const { error } = await sb.from(t).update(r).eq('id', id); if (error) throw error; },
+  async del(t, id) { if (IS_PREVIEW) { D[t].splice(D[t].findIndex(x => x.id == id), 1); return; } const { error } = await sb.from(t).delete().eq('id', id); if (error) throw error; },
+  async login(u, p) {
+    if (IS_PREVIEW) { const r = D.app_users.find(x => x.username == u && x.password_hash == p && x.aktif); return r && { ...r, password_hash: undefined }; }
+    const { data, error } = await sb.rpc('login_user', { p_username: u, p_password: p }); if (error) throw error; return data && data[0];
+  }
+};
+
+// ===== Konstanta & helper =====
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const san = h => { const t = document.createElement('template'); t.innerHTML = h; t.content.querySelectorAll('*').forEach(n => { if (!/^(B|I|UL|OL|LI|BR|DIV|P|STRONG|EM)$/.test(n.tagName)) n.replaceWith(document.createTextNode(n.textContent)); else [...n.attributes].forEach(a => n.removeAttribute(a.name)); }); return t.innerHTML; };
+const fd = d => d ? new Date(d).toLocaleString('id-ID', { dateStyle: 'medium', timeStyle: 'short' }) : '-';
+const PR = { critical: ['Critical', '#FEF2F2', '#DC2626'], high: ['High', '#FFF7ED', '#EA580C'], medium: ['Medium', '#FEFCE8', '#CA8A04'], low: ['Low', '#F1F5F9', '#475569'] };
+const ST = { open: ['Open', '#EEF2FF', '#4F46E5'], progress: ['In Progress', '#EFF6FF', '#2563EB'], waiting: ['Waiting', '#FFFBEB', '#D97706'], resolved: ['Resolved', '#ECFDF5', '#059669'], closed: ['Closed', '#F1F5F9', '#64748B'] };
+const bd = (m, k) => { const [a, b, c] = m[k] || [k, '#F1F5F9', '#475569']; return `<span class=bd style="background:${b};color:${c}"><i style="background:${c}"></i>${a}</span>`; };
+const SLA = { critical: 4, high: 8, medium: 24, low: 72 }, FIN = ['resolved', 'closed'];
+const bad = t => !FIN.includes(t.status) && t.due_resolusi && new Date(t.due_resolusi) < Date.now();
+const slaT = t => { if (FIN.includes(t.status)) return ['Selesai', '#059669']; const ms = new Date(t.due_resolusi) - Date.now(), a = Math.abs(ms), h = Math.floor(a / 36e5), m = Math.floor(a % 36e5 / 6e4); return ms < 0 ? [`Lewat ${h}j ${m}m`, '#DC2626'] : [`${h}j ${m}m`, ms < 72e5 ? '#D97706' : '#059669']; };
+const CATS = { Jaringan: ['WiFi/LAN putus', 'VPN', 'Internet lambat'], Hardware: ['PC/Laptop rusak', 'Monitor', 'Keyboard/Mouse'], Software: ['Instalasi aplikasi', 'Aplikasi error', 'Lisensi'], 'Akun & Akses': ['Reset password', 'Akses sistem', 'Akun baru'], Email: ['Tidak bisa kirim', 'Tidak bisa masuk'], Printer: ['Tidak mencetak', 'Tinta/Toner', 'Setup printer'], Lainnya: ['Lainnya'] };
+const emp = (t, s) => `<div class=emp><i data-lucide=inbox></i><h3>${t}</h3><p>${s || ''}</p></div>`;
+const icons = () => window.lucide && lucide.createIcons();
+const toast = (m, e) => { const d = document.createElement('div'); d.className = 'ts' + (e ? ' er' : ''); d.textContent = m; root.appendChild(d); setTimeout(() => d.remove(), 4000); };
+const closeM = () => $('#M')?.remove();
+const modal = h => { closeM(); const d = document.createElement('div'); d.id = 'M'; d.className = 'ov'; d.dataset.a = 'cm'; d.innerHTML = `<div class=md>${h}</div>`; root.appendChild(d); icons(); };
+const RL = { enduser: 'KARYAWAN', support: 'IT SUPPORT', lead: 'IT LEAD', admin: 'ADMIN' };
+const M1 = [['layout-dashboard', 'Dashboard', 'dash', 'MENU UTAMA'], ['inbox', 'Antrian Tiket', 'tickets', 'TIKET'], ['user-check', 'Tiket Saya', 'mine', 'TIKET'], ['book-open', 'Knowledge Base', 'kb', 'TIKET'], ['monitor', 'Aset IT', 'assets', 'TIKET']];
+const M2 = [...M1, ['timer', 'Monitor SLA', 'sla', 'MANAJEMEN'], ['users', 'Beban Kerja', 'load', 'MANAJEMEN'], ['star', 'Survei CSAT', 'csat', 'MANAJEMEN']];
+const MN = { enduser: [['home', 'Beranda', 'home', 'MENU UTAMA'], ['plus-circle', 'Buat Tiket', 'new', 'MENU UTAMA'], ['ticket', 'Tiket Saya', 'mine', 'MENU UTAMA'], ['book-open', 'Pusat Bantuan', 'kb', 'MENU UTAMA'], ['laptop', 'Aset Saya', 'assets', 'MENU UTAMA']], support: M1, lead: M2, admin: [...M2, ['user-cog', 'Manajemen User', 'users', 'SYSTEM']] };
+const S = { u: null, v: '', p: {}, mode: 'table', f: 'all', q: '', pr: '', cat: '', ag: '', rt: {}, R: {}, N: {}, ph: [] }, N = S.N;
+try { S.u = JSON.parse(localStorage.getItem('itd_u')); if (S.u) N[S.u.id] = S.u.nama; } catch (e) {}
+const loadU = async () => { if (!S.U) { S.U = await db.sel('app_users'); S.U.forEach(u => N[u.id] = u.nama); } };
+const loadT = async () => { await loadU(); S.T = await db.sel('tickets', { eq: S.u.role == 'enduser' ? { requester_id: S.u.id } : {} }); return S.T; };
+const staff = () => { const L = S.U.filter(u => u.role != 'enduser'); if (S.u.role != 'enduser' && !L.find(u => u.id == S.u.id)) L.push(S.u); return L; };
+
+const dp = t => ((S.U || []).find(u => u.id == t.requester_id) || {}).department || '-';
+// ===== Komponen =====
+const kp = (i, c, l, v, f) => `<div class="card kp"><small>${l}</small><div><span class=ic style="background:${c}1a;color:${c}"><i data-lucide=${i}></i></span><b>${v}</b></div><hr><small>${f}</small></div>`;
+const tbl = L => L.length ? `<div style=overflow:auto><table class=rs><tr class=hr><th>No<th>Judul<th>Departemen<th>Kategori<th>Prioritas<th>Status<th>SLA</tr>${L.map(t => { const s = slaT(t); return `<tr data-a=go data-v=tk data-id=${t.id}><td data-l=No><b>${t.no_tiket}</b><td data-l=Judul><span>${esc(t.judul)}<br><small>${esc(N[t.requester_id] || '')}</small></span><td data-l=Departemen>${esc(dp(t))}<td data-l=Kategori>${esc(t.kategori)}<td data-l=Prioritas>${bd(PR, t.prioritas)}<td data-l=Status>${bd(ST, t.status)}<td data-l=SLA style="color:${s[1]};font-weight:600">${s[0]}`; }).join('')}</table></div>` : emp('Belum ada tiket', 'Semua lancar!');
+const days = n => [...Array(n)].map((_, i) => new Date(Date.now() - (n - 1 - i) * 864e5).toISOString().slice(0, 10));
+function line(T) { const X = days(7), a = X.map(d => T.filter(t => t.created_at.slice(0, 10) == d).length), b = X.map(d => T.filter(t => (t.resolved_at || '').slice(0, 10) == d).length), m = Math.max(1, ...a, ...b), p = v => v.map((y, i) => `${i * 50 + 10},${110 - y / m * 100}`).join(' '); return `<svg viewBox="0 0 320 125" style="width:100%;height:auto"><polyline fill=none stroke=#2563EB stroke-width=2 points="${p(a)}"/><polyline fill=none stroke=#10B981 stroke-width=2 points="${p(b)}"/>${X.map((d, i) => `<text x=${i * 50 + 10} y=122 font-size=8 text-anchor=middle fill=#94A3B8>${d.slice(8)}</text>`).join('')}</svg><small><b style=color:#2563EB>● Masuk</b> &nbsp;<b style=color:#10B981>● Selesai</b></small>`; }
+function donut(T) { const c = {}; T.forEach(t => c[t.kategori] = (c[t.kategori] || 0) + 1); const K = Object.keys(c), P = ['#2563EB', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4', '#64748B']; let a = 0; const g = K.map((k, i) => { const s = a; a += c[k] / T.length * 100; return `${P[i % 7]} ${s}% ${a}%`; }).join(','); return K.length ? `<div class=dn style="background:conic-gradient(${g})"><b>${T.length}</b></div>${K.map((k, i) => `<small><b style=color:${P[i % 7]}>●</b> ${esc(k)} (${c[k]})</small>`).join(' ')}` : emp('Belum ada data'); }
+function bars(T) { const m = {}; T.filter(t => t.assignee_id && !FIN.includes(t.status)).forEach(t => m[t.assignee_id] = (m[t.assignee_id] || 0) + 1); const e = Object.entries(m), mx = Math.max(1, ...Object.values(m)); return e.length ? e.map(([k, v]) => `<div class=br><span>${esc(N[k] || 'User ' + k)}</span><span><i style="width:${v / mx * 100}%"></i></span><b>${v}</b></div>`).join('') : emp('Belum ada tiket aktif'); }
+
+// ===== Views =====
+async function home() {
+  const T = await loadT(); S.K = await db.sel('kb_articles');
+  const qa = (i, c, l, s, a, t) => `<div class="card qa" data-a=${a} data-v=kb data-t=${t || ''}><span class=ic style="background:${c}1a;color:${c}"><i data-lucide=${i}></i></span><b>${l}</b><br><small>${s}</small></div>`;
+  return `<h1>Halo, ${esc(S.u.nama)} 👋</h1><p>Ada kendala apa hari ini?</p><input data-i=ks placeholder="🔍 Cari masalah atau solusi…" style="font-size:15px;padding:12px"><div id=ksr></div>
+<div class="g c3" style="margin:12px 0">${qa('alert-triangle', '#EF4444', 'Laporkan Masalah', 'Perangkat/aplikasi error', 'newt', 'incident')}${qa('package-plus', '#2563EB', 'Minta Layanan', 'Akun, instalasi, akses', 'newt', 'request')}${qa('book-open', '#10B981', 'Pusat Bantuan', 'Cari solusi mandiri', 'go')}</div>
+<div class="g k" style="margin-bottom:16px">${kp('ticket', '#2563EB', 'Tiket Aktif', T.filter(t => !FIN.includes(t.status)).length, 'Sedang diproses')}${kp('check-circle', '#10B981', 'Selesai', T.filter(t => FIN.includes(t.status)).length, 'Resolved/Closed')}${kp('list', '#8B5CF6', 'Total Tiket', T.length, 'Semua waktu')}</div>
+<div class=card><div class=bar><h3>TIKET SAYA</h3><span class=sp></span><button class="btn g2" data-a=go data-v=mine>Lihat Semua</button></div>${tbl(T.slice(0, 5))}</div>`;
+}
+async function newF() {
+  S.K = await db.sel('kb_articles'); const As = S.As = await db.sel('assets'), t = S.nt || 'incident'; S.nt = 0;
+  const U = [['low', 'Rendah', 'Tidak mengganggu pekerjaan'], ['medium', 'Sedang', 'Pekerjaan sedikit terhambat'], ['high', 'Tinggi', 'Pekerjaan terhambat'], ['critical', 'Kritis', 'Tidak bisa bekerja sama sekali']];
+  return `<h1><i data-lucide=plus-circle></i> BUAT TIKET BARU</h1><div class=card style=max-width:760px>
+<label><b>1. Jenis Tiket</b></label><div class="g k tp" style="margin:6px 0 12px">${[['incident', 'Laporan Masalah', 'Gunakan ini jika perangkat PC, printer, jaringan, atau aplikasi kantor mengalami error/rusak'], ['request', 'Permintaan Layanan', 'Ajukan instalasi software baru, akses internet, atau pembuatan akun email baru.']].map(([v, l, d]) => `<label class="card ur"><input type=radio name=ty value=${v} data-c=ty ${v == t ? 'checked' : ''} style=width:auto> <b>${l}</b><br><small>${d}</small></label>`).join('')}</div>
+<label><b>2. Kategori</b></label><select id=f_c data-c=fc><option value="">Pilih kategori…${Object.keys(CATS).map(k => `<option>${k}`).join('')}</select><label>Sub-kategori</label><select id=f_s></select><div id=kbs></div>
+<div id=f_lw hidden><label>Lokasi / Ruangan</label><input id=f_l value="${esc(S.u.lokasi || '')}"></div>
+<label>Aset Terkait <small>(pilih dari daftar atau ketik manual)</small></label><input id=f_a list=al autocomplete=off placeholder="Contoh: PC-0045 atau ketik nama perangkat"><datalist id=al>${As.map(a => `<option value="${esc(a.kode)} - ${esc(a.merek || a.tipe)}">`).join('')}</datalist>
+<label><b>3. Tingkat Urgensi</b></label><div class="g k" style="margin:6px 0 12px">${U.map(([v, l, d]) => `<label class="card ur"><input type=radio name=pr value=${v} ${v == 'medium' ? 'checked' : ''} style=width:auto> <b>${l}</b><br><small>${d}</small></label>`).join('')}</div>
+<label>Judul</label><input id=f_j maxlength=120 placeholder="Ringkas masalah Anda"><div id=f_jw ${t == 'request' ? '' : 'hidden'}><label>Alasan / Justifikasi kebutuhan</label><input id=f_jj></div>
+<label>Deskripsi</label><div class=tb onmousedown="event.preventDefault()"><button data-a=fmt data-m=bold><b>B</b></button><button data-a=fmt data-m=italic><i>I</i></button><button data-a=fmt data-m=insertUnorderedList>• List</button></div><div id=f_d class=ed contenteditable=true></div><label class="btn g2" style="display:inline-block;margin-bottom:6px">📷 Ambil Foto (Kamera)<input type=file accept="image/*" capture=environment hidden data-c=pick></label> <label class="btn g2" style="display:inline-block;margin-bottom:6px">🖼 Pilih dari Galeri / File<input type=file accept="image/*" multiple hidden data-c=pick></label> <small>Maks 5 foto, otomatis dikompres</small><div id=phl></div>
+<div class=row><button class="btn g2" data-a=go data-v=mine>Batal</button><button class=btn data-a=submit>Kirim Tiket</button></div></div>`;
+}
+async function tickets() {
+  const T = await loadT(), stf = S.u.role != 'enduser', q = S.q.toLowerCase();
+  const L = T.filter(t => (S.f == 'all' || S.f == 'mine' && (!stf || t.assignee_id == S.u.id) || S.f == 'unassigned' && !t.assignee_id || S.f == 'sla' && bad(t)) && (!S.pr || t.prioritas == S.pr) && (!S.cat || t.kategori == S.cat) && (!S.ag || t.assignee_id == S.ag) && (!q || (t.judul + t.no_tiket).toLowerCase().includes(q)));
+  const sel = (id, ph, o) => `<select data-c=${id} style="width:auto;display:inline-block;margin:0"><option value="">${ph}${o.map(([v, l]) => `<option value="${v}" ${S[id] == v ? 'selected' : ''}>${l}`).join('')}</select>`;
+  const body = S.mode == 'kanban' && stf ? `<div class=kbn>${['open', 'progress', 'waiting', 'resolved'].map(s => { const X = L.filter(t => t.status == s); return `<div class=kc data-drop=${s}><div class=kh style="border-top:3px solid ${ST[s][2]}">${ST[s][0]} <b>(${X.length})</b></div>${X.map(t => { const z = slaT(t); return `<div class="card kcd" draggable=true data-drag=${t.id} data-a=go data-v=tk data-id=${t.id}><small>${t.no_tiket}</small><div><b>${esc(t.judul)}</b></div>${bd(PR, t.prioritas)} <small style=color:${z[1]}>⏱ ${z[0]}</small><br><small>🏢 ${esc(dp(t))}</small><br><small>👤 ${esc(N[t.assignee_id] || 'Belum ditugaskan')}</small></div>`; }).join('')}</div>`; }).join('')}</div>` : `<div class="card tc">${tbl(L)}</div>`;
+  return `<div class=bar><h1><i data-lucide=inbox></i> ${stf ? 'ANTRIAN TIKET' : 'TIKET SAYA'}</h1><span class=sp></span>${stf ? `<div class=tabs><span class="${S.mode == 'table' ? 'on' : ''}" data-a=mode data-m=table>☰ Tabel</span><span class="${S.mode == 'kanban' ? 'on' : ''}" data-a=mode data-m=kanban>▦ Kanban</span></div>` : ''}<button class=btn data-a=newt data-t=incident>+ Tiket Baru</button></div>
+<div class=bar>${stf ? `<div class=tabs>${[['all', 'Semua'], ['mine', 'Milik Saya'], ['unassigned', 'Belum Ditugaskan'], ['sla', '🔥 SLA Lewat']].map(([k, l]) => `<span class="${S.f == k ? 'on' : ''}" data-a=fl data-f=${k}>${l}</span>`).join('')}</div>` : ''}
+<input data-c=q placeholder="Cari tiket…" value="${esc(S.q)}" style="width:170px;margin:0">${sel('pr', 'Semua Prioritas', Object.keys(PR).map(k => [k, PR[k][0]]))}${sel('cat', 'Semua Kategori', Object.keys(CATS).map(k => [k, k]))}${stf ? sel('ag', 'Semua Assignee', staff().map(u => [u.id, u.nama])) : ''}<button class="btn g2" data-a=rst>Reset</button></div>${body}`;
+}
+async function detail() {
+  await loadT(); const t = S.T.find(x => x.id == S.p.id); if (!t) return emp('Tiket tidak ditemukan');
+  const stf = S.u.role != 'enduser', C = (await db.sel('ticket_comments', { eq: { ticket_id: t.id } })).sort((a, b) => a.created_at < b.created_at ? -1 : 1).filter(c => stf || !c.is_internal);
+  const F = await db.sel('ticket_attachments', { eq: { ticket_id: t.id } }), R = await db.sel('csat_ratings', { eq: { ticket_id: t.id } }), rq = S.U.find(u => u.id == t.requester_id) || { nama: N[t.requester_id] }, as = t.asset_id ? (await db.sel('assets', { eq: { id: t.asset_id } }))[0] : null, s = slaT(t), fin = FIN.includes(t.status);
+  if (!stf && t.status == 'resolved' && !R.length && !S.rt[t.id]) { S.rt[t.id] = 1; S.hook = () => rateM(t.id); }
+  return `<div class=bar><button class="btn g2" data-a=go data-v=${stf ? 'tickets' : 'mine'}>← Kembali</button><h2>${t.no_tiket}</h2>${bd(ST, t.status)}${R.length ? `<span>${'★'.repeat(R[0].rating)} CSAT</span>` : ''}</div>
+<div class="g sp2" style="grid-template-columns:1.8fr 1fr;align-items:start"><div class=g><div class=card><h3>${esc(t.judul)}</h3><div class=ds>${san(t.deskripsi || '')}</div>${gal(F.filter(f => !f.comment_id))}</div>
+<div class=card><h3>Riwayat Percakapan</h3>${C.length ? C.map(c => `<div class="cm ${c.is_internal ? 'in' : ''}"><b>${esc(N[c.author_id] || 'Sistem')}</b> <small>${fd(c.created_at)}${c.is_internal ? ' · 🔒 Catatan internal' : ''}</small><div>${esc(c.isi)}</div>${gal(F.filter(f => f.comment_id == c.id))}</div>`).join('') : '<p>Belum ada percakapan.</p>'}
+${!fin || stf ? `<hr><label>${stf ? '<input type=radio name=rt value=0 checked style=width:auto> Balasan Publik &nbsp; <input type=radio name=rt value=1 style=width:auto> 🔒 Catatan Internal' : 'Balas'}</label><textarea id=rp rows=3 placeholder="Tulis balasan…"></textarea><label class="btn g2" style="display:inline-block">📷 Foto<input type=file accept="image/*" multiple hidden data-c=pick></label> <button class=btn data-a=reply data-id=${t.id}>Kirim</button><div id=phl></div>` : ''}</div></div>
+<div class=g><div class=card><small>SLA RESOLUSI</small><h2 style="color:${s[1]};font-size:26px">⏱ ${s[0]}</h2><small>Target: ${fd(t.due_resolusi)}</small></div>
+<div class=card><h3>Detail Tiket</h3><p>Status: ${stf ? `<select data-c=st data-id=${t.id}>${Object.keys(ST).map(k => `<option value=${k} ${k == t.status ? 'selected' : ''}>${ST[k][0]}`).join('')}</select>` : bd(ST, t.status)}</p><p>Prioritas: ${bd(PR, t.prioritas)}</p><p>Kategori: ${esc(t.kategori)} / ${esc(t.subkategori)}</p><p>Assignee: <b>${esc(N[t.assignee_id] || 'Belum ditugaskan')}</b></p>
+${stf ? `<button class="btn g2" data-a=asgm data-id=${t.id}>${t.assignee_id ? 'Tugaskan Ulang' : 'Tugaskan Tiket'}</button>` : ''}${!stf && t.status == 'resolved' ? `<div class=row><button class="btn g2" data-a=reopen data-id=${t.id}>Buka Kembali</button><button class=btn data-a=close data-id=${t.id}>Tutup Tiket</button></div>` : ''}</div>
+<div class=card><h3>Pemohon</h3><p><b>${esc(rq.nama)}</b></p><p>Departemen: ${esc(rq.department || '-')}<br>Kontak: ${esc(rq.telepon || rq.email || '-')}<br>Lokasi: ${esc(t.lokasi || rq.lokasi || '-')}</p></div>
+<div class=card><h3>Aset Terkait</h3>${as ? `<p><b>${esc(as.kode)}</b> (${esc(as.tipe)})<br>${esc(as.merek)}<br>${esc(as.spesifikasi)}</p>` : t.aset_manual ? `<p>${esc(t.aset_manual)}<br><small>(input manual)</small></p>` : '<p>Tidak ada aset terkait.</p>'}</div></div></div>`;
+}
+async function dash() {
+  const T = await loadT(), R = await db.sel('csat_ratings'), done = T.filter(t => t.resolved_at), ok = done.filter(t => new Date(t.resolved_at) <= new Date(t.due_resolusi)).length, avg = done.length ? done.reduce((s, t) => s + (new Date(t.resolved_at) - new Date(t.created_at)), 0) / done.length : 0, B = T.filter(bad), ym = new Date().toISOString().slice(0, 7);
+  S.hook = () => { if (B.length && !S.w) { S.w = 1; A.al(); } };
+  return `<h1><i data-lucide=home></i> DASHBOARD</h1><p>Ringkasan performa tiket, SLA, dan beban kerja tim IT.</p><div class="g k" style="margin:12px 0">${kp('ticket', '#2563EB', 'Total Tiket Bulan Ini', T.filter(t => t.created_at.slice(0, 7) == ym).length, 'Semua kategori')}${kp('inbox', '#8B5CF6', 'Tiket Terbuka', T.filter(t => !FIN.includes(t.status)).length, 'Belum ditugaskan: ' + T.filter(t => !t.assignee_id).length)}${kp('shield-check', '#10B981', '% SLA Achievement', (done.length ? Math.round(ok / done.length * 100) : 100) + '%', 'Target > 90%')}${kp('timer', '#F59E0B', 'Avg Resolution', Math.floor(avg / 36e5) + 'j ' + Math.floor(avg % 36e5 / 6e4) + 'm', 'Dari ' + done.length + ' tiket')}${kp('star', '#EAB308', 'Rating CSAT', R.length ? (R.reduce((s, r) => s + r.rating, 0) / R.length).toFixed(1) : '-', 'Dari ' + R.length + ' ulasan')}${kp('alert-triangle', '#EF4444', 'SLA Breach', B.length, 'Saat ini')}</div>
+<div class="g c3"><div class=card><h3>TREN TIKET (7 HARI)</h3>${line(T)}</div><div class=card><h3>SEBARAN KATEGORI</h3>${donut(T)}</div><div class=card><h3>BEBAN KERJA TEKNISI</h3>${bars(T)}</div></div>`;
+}
+async function csat() {
+  const T = await loadT(), R = await db.sel('csat_ratings');
+  return `<h1><i data-lucide=star></i> SURVEI CSAT</h1><div class="card tc">${R.length ? `<table class=rs><tr class=hr><th>Tiket<th>Rating<th>Komentar<th>Tanggal</tr>${R.map(r => `<tr><td data-l=Tiket>${esc((T.find(t => t.id == r.ticket_id) || {}).no_tiket || r.ticket_id)}<td data-l=Rating style=color:#F59E0B>${'★'.repeat(r.rating)}<td data-l=Komentar>${esc(r.komentar || '-')}<td data-l=Tanggal>${fd(r.created_at)}`).join('')}</table>` : emp('Belum ada ulasan', 'Ulasan muncul setelah tiket diselesaikan.')}</div>`;
+}
+async function kb() {
+  S.K = await db.sel('kb_articles'); S.R.kb_articles = S.K; const q = (S.kq || '').toLowerCase(), L = S.K.filter(a => (a.judul + a.isi + a.kategori).toLowerCase().includes(q)), stf = S.u.role != 'enduser';
+  return `<div class=bar><h1><i data-lucide=book-open></i> ${stf ? 'KNOWLEDGE BASE' : 'PUSAT BANTUAN'}</h1><span class=sp></span>${stf ? '<button class=btn data-a=fa data-n=kb>+ Artikel</button>' : ''}</div><input data-c=kq placeholder="Cari artikel…" value="${esc(S.kq || '')}"><div class="g c3">${L.length ? L.map(a => `<div class=card><span class=bd style="background:#EFF6FF;color:#2563EB">${esc(a.kategori)}</span><h3 style=margin-top:6px>${esc(a.judul)}</h3><p>${esc(a.isi.slice(0, 110))}…</p><button class="btn g2" data-a=ka data-id=${a.id}>Baca</button>${stf ? ` <button class="btn g2" data-a=fa data-n=kb data-id=${a.id}>Edit</button> <button class="btn g2" data-a=fdl data-n=kb data-id=${a.id}>Hapus</button>` : ''}</div>`).join('') : emp('Artikel tidak ditemukan')}</div>`;
+}
+const CFG = {
+  users: { t: 'app_users', title: 'Manajemen User', req: ['username', 'nama'], c: ['username', 'nama', 'role', 'department', 'aktif'], f: [['username', 'Username / NIK'], ['password_hash', 'Password', 'password'], ['nama', 'Nama Lengkap'], ['email', 'Email'], ['telepon', 'Telepon'], ['department', 'Departemen'], ['lokasi', 'Lokasi'], ['role', 'Role', 'select', ['enduser', 'support', 'lead', 'admin']], ['aktif', 'Aktif', 'select', ['true', 'false']]] },
+  assets: { t: 'assets', title: 'Aset IT', req: ['kode'], c: ['kode', 'tipe', 'merek', 'spesifikasi', 'owner_id'], f: [['kode', 'Kode Aset'], ['tipe', 'Tipe', 'select', ['PC', 'Laptop', 'Printer', 'Lainnya']], ['merek', 'Merek / Model'], ['spesifikasi', 'Spesifikasi'], ['owner_id', 'ID Pemilik (user)', 'number']] },
+  kb: { t: 'kb_articles', title: 'Artikel KB', req: ['judul', 'isi'], c: [], f: [['judul', 'Judul'], ['kategori', 'Kategori', 'select', Object.keys(CATS)], ['isi', 'Isi', 'textarea']] }
+};
+async function crud(n) {
+  const c = CFG[n], R = await db.sel(c.t); S.R[c.t] = R; const L = n == 'assets' && S.u.role == 'enduser' ? R.filter(r => r.owner_id == S.u.id) : R, can = S.u.role == 'admin';
+  return `<div class=bar><h1>${c.title.toUpperCase()}</h1><span class=sp></span>${can ? `<button class=btn data-a=fa data-n=${n}>+ Tambah</button>` : ''}</div><div class="card tc">${L.length ? `<div style=overflow:auto><table class=rs><tr class=hr>${c.c.map(k => `<th>${c.f.find(f => f[0] == k)[1]}`).join('')}${can ? '<th>' : ''}</tr>${L.map(r => `<tr>${c.c.map(k => `<td data-l="${c.f.find(f => f[0] == k)[1]}">${esc(r[k])}`).join('')}${can ? `<td data-l=""><button class="btn g2" data-a=fa data-n=${n} data-id=${r.id}>Edit</button> <button class="btn g2" data-a=fdl data-n=${n} data-id=${r.id}>Hapus</button>` : ''}</tr>`).join('')}</table></div>` : emp('Belum ada data', 'Klik Tambah untuk membuat data baru.')}</div>`;
+}
+const V = { home, new: newF, mine: tickets, tickets, sla: tickets, dash, csat, kb, users: () => crud('users'), assets: () => crud('assets'), tk: detail, load: async () => `<h1><i data-lucide=users></i> BEBAN KERJA TEKNISI</h1><div class=card>${bars(await loadT())}</div>` };
+
+// ===== Shell =====
+const loginH = () => `<div class=lg><div class="card lc"><div class=lgo><img src="${LOGO}" alt=CGN><b>IT Desk</b><small>CGN System</small></div><input id=lu placeholder="Username / NIK"><input id=lp type=password placeholder=Password><button class=btn style=width:100% data-a=login>Masuk</button>${IS_PREVIEW ? `<p><span class=pv>Mode Preview Aktif</span></p><small>Quick Login:</small><div class=row style=justify-content:center;flex-wrap:wrap>${Object.keys(RL).map(r => `<button class="btn g2" data-a=qlogin data-r=${r}>${RL[r]}</button>`).join('')}</div>` : ''}</div></div>`;
+function draw() {
+  if (!S.u) { root.innerHTML = loginH(); icons(); return; }
+  const mn = MN[S.u.role], gs = [...new Set(mn.map(i => i[3]))], ini = S.u.nama.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+  root.innerHTML = `<aside class=sb><div class=logo><img src="${LOGO}" alt=CGN><div><b>IT Desk</b><small>CGN System</small></div></div>${gs.map(g => `<h6>${g}</h6>` + mn.filter(i => i[3] == g).map(i => `<div class="it ${S.v == i[2] ? 'on' : ''}" data-a=go data-v=${i[2]}><i data-lucide=${i[0]}></i>${i[1]}</div>`).join('')).join('')}<div class=it data-a=logout style="margin-top:auto;margin-bottom:12px"><i data-lucide=log-out></i>LOGOUT</div></aside>
+<div id=sbo class=sbo hidden data-a=tg></div><div class=mn><header class=hd><button class="hb hm" data-a=tg><i data-lucide=menu></i></button><div class=mlogo><img src="${LOGO}" alt=CGN><b>IT Desk</b></div><span class=sp></span>${IS_PREVIEW ? '<span class=pv>Mode Preview Aktif</span>' : ''}<span class=chip>📅 <b>${new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })}</b> <code id=clk></code></span>
+<button class=hb data-a=al style=position:relative><i data-lucide=bell></i><i id=dot hidden style="position:absolute;top:3px;right:3px;width:8px;height:8px;border-radius:50%;background:#EF4444"></i></button>
+<div style=position:relative><div class=pf data-a=dd><span class=av>${esc(ini)}</span><span><b>${esc(S.u.nama)}</b><br><span class=rb>${RL[S.u.role]}</span></span></div><div id=dd class=dd><div data-a=prof><i data-lucide=shield></i>Profil & Akses User</div><div data-a=logout style=color:#DC2626><i data-lucide=log-out></i>Keluar / Logout</div></div></div></header><main class=ct id=ct></main></div>
+<nav class=bn>${mn.map(i => `<div class="${S.v == i[2] ? 'on' : ''}" data-a=go data-v=${i[2]}><i data-lucide=${i[0]}></i>${i[1].split(' ')[0]}</div>`).join('')}</nav>`;
+  tick(); view();
+}
+async function view() {
+  const el = $('#ct'); if (!el) return; el.innerHTML = '<div class="g k"><div class=sk></div><div class=sk></div><div class=sk></div></div>'; S.hook = null; S.ph = [];
+  try { el.innerHTML = await V[S.v](); } catch (e) { el.innerHTML = emp('Gagal memuat data', esc(e.message || '')); toast(e.message || 'Terjadi kesalahan', 1); }
+  icons(); const d = $('#dot'); if (d) d.hidden = !(S.T || []).some(bad); S.hook?.();
+}
+const tick = () => { const c = $('#clk'); if (c) c.textContent = new Date().toLocaleTimeString('id-ID', { hour12: false }).replace(/\./g, ':'); }; setInterval(tick, 1000);
+function go(v, p = {}) { S.v = v; S.p = p; if (v == 'mine') S.f = 'mine'; if (v == 'sla') S.f = 'sla'; if (v == 'tickets') S.f = 'all'; draw(); }
+async function setSt(id, st, note) {
+  const t = S.T.find(x => x.id == id), r = { status: st }; if (st == 'resolved') r.resolved_at = new Date().toISOString(); if (st == 'progress' && !t.assignee_id && S.u.role != 'enduser') r.assignee_id = S.u.id;
+  await db.upd('tickets', id, r); await db.ins('ticket_comments', { ticket_id: id, author_id: S.u.id, isi: `Status diubah menjadi ${ST[st][0]}${note ? ': ' + note : ''}`, is_internal: false }); toast('Status diperbarui'); view();
+}
+function stSet(id, st) { if (['waiting', 'resolved'].includes(st)) return modal(`<h3>Ubah ke ${ST[st][0]}</h3><textarea id=sn rows=3 placeholder="${st == 'resolved' ? 'Catatan solusi (wajib)' : 'Alasan menunggu (wajib)'}"></textarea><div class=row><button class="btn g2" data-a=cm>Batal</button><button class=btn data-a=stok data-id=${id} data-s=${st}>Simpan</button></div>`); setSt(id, st); }
+const paintS = () => document.querySelectorAll('#M .stars span').forEach((s, i) => s.style.color = i < S.star ? '#F59E0B' : '#CBD5E1');
+function rateM(id) { S.star = 5; modal(`<h3>Bagaimana layanan kami?</h3><div class=stars>${[1, 2, 3, 4, 5].map(n => `<span data-a=star data-n=${n}>★</span>`).join('')}</div><textarea id=rc rows=2 placeholder="Komentar (opsional)"></textarea><div class=row><button class="btn g2" data-a=cm>Lewati</button><button class=btn data-a=rate data-id=${id}>Kirim Ulasan</button></div>`); paintS(); }
+const login = u => { S.u = u; N[u.id] = u.nama; S.U = null; S.v = u.role == 'enduser' ? 'home' : 'dash'; try { localStorage.setItem('itd_u', JSON.stringify(u)); } catch (e) {} draw(); };
+
+// ===== Foto lampiran =====
+const shrink = f => new Promise((ok, no) => { const im = new Image(), u = URL.createObjectURL(f); im.onload = () => { const r = Math.min(1, 1280 / Math.max(im.width, im.height)), c = document.createElement('canvas'); c.width = im.width * r; c.height = im.height * r; c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); c.toBlob(b => { URL.revokeObjectURL(u); ok(b); }, 'image/jpeg', .8); }; im.onerror = () => no(new Error('File bukan gambar')); im.src = u; });
+const toURL = b => new Promise(ok => { const r = new FileReader(); r.onload = () => ok(r.result); r.readAsDataURL(b); });
+async function saveFotos(tid, cid) {
+  for (const p of S.ph) {
+    let url; if (IS_PREVIEW) url = await toURL(p.b); else { const path = `${tid}/${Date.now()}_${Math.random().toString(36).slice(2, 8)}.jpg`, { error } = await sb.storage.from('ticket-files').upload(path, p.b, { contentType: 'image/jpeg' }); if (error) throw error; url = sb.storage.from('ticket-files').getPublicUrl(path).data.publicUrl; }
+    await db.ins('ticket_attachments', { ticket_id: tid, comment_id: cid || null, nama_file: p.n, url, ukuran: p.b.size });
+  } S.ph = [];
+}
+const phH = () => S.ph.map((p, i) => `<span><img src="${p.u}"><em data-a=phx data-i=${i}>×</em></span>`).join('');
+const gal = L => L.length ? `<div class=ph>${L.map(f => `<img src="${esc(f.url)}" data-a=zoom data-u="${esc(f.url)}" loading=lazy>`).join('')}</div>` : '';
+// ===== Aksi =====
+const A = {
+  phx: d => { S.ph.splice(+d.i, 1); $('#phl').innerHTML = `<div class=ph>${phH()}</div>`; },
+  zoom: d => modal(`<img src="${esc(d.u)}" style="width:100%;border-radius:8px"><div class=row><button class="btn g2" data-a=cm>Tutup</button></div>`),
+  go: d => go(d.v, d.id ? { id: +d.id } : {}), cm: (d, t, e) => { if (e.target == t || !t.classList.contains('ov')) closeM(); },
+  tg: () => { const b = $('.sb'); if (innerWidth < 900) { b.classList.toggle('open'); $('#sbo').hidden = !b.classList.contains('open'); } else b.classList.toggle('cl'); }, dd: () => $('#dd').classList.toggle('sh'),
+  logout: () => { S.u = null; try { localStorage.removeItem('itd_u'); } catch (e) {} draw(); },
+  login: async () => { const u = await db.login($('#lu').value.trim(), $('#lp').value); if (!u) return toast('Username atau password salah', 1); login(u); },
+  qlogin: d => { const n = { admin: 'Administrator IT', enduser: 'Budi Santoso', lead: 'Lead IT', support: 'Teknisi IT' }; login({ id: { admin: 1, enduser: 2, lead: 3, support: 4 }[d.r], username: d.r, nama: n[d.r], role: d.r, department: d.r == 'enduser' ? 'Weaving' : 'IT', lokasi: 'Gedung A', telepon: '0812' }); },
+  prof: () => { $('#dd').classList.remove('sh'); modal(`<h3>Profil & Akses User</h3><p><b>${esc(S.u.nama)}</b> (@${esc(S.u.username)})<br>Role: <span class=rb>${RL[S.u.role]}</span><br>Departemen: ${esc(S.u.department || '-')}<br>Lokasi: ${esc(S.u.lokasi || '-')}</p><button class="btn g2" data-a=cm>Tutup</button>`); },
+  al: () => { const B = (S.T || []).filter(bad); modal(`<h3 style=color:#DC2626>⚠ Peringatan SLA</h3>${B.length ? B.map(t => `<p><b>${t.no_tiket}</b> ${esc(t.judul)} <button class="btn g2" data-a=go data-v=tk data-id=${t.id}>Lihat</button></p>`).join('') : '<p>Tidak ada tiket yang melewati SLA 🎉</p>'}<button class="btn g2" data-a=cm>Tutup</button>`); },
+  mode: d => { S.mode = d.m; view(); }, fl: d => { S.f = d.f; view(); }, rst: () => { Object.assign(S, { q: '', pr: '', cat: '', ag: '', f: 'all' }); view(); },
+  newt: d => { S.nt = d.t; go('new'); },
+  fmt: d => document.execCommand(d.m),
+  submit: async () => {
+    const g = i => $('#' + i).value.trim(), av = g('f_a'), am = S.As.find(a => av.toLowerCase() == (a.kode + ' - ' + (a.merek || a.tipe)).toLowerCase() || av.toLowerCase() == a.kode.toLowerCase()), pr = document.querySelector('input[name=pr]:checked').value, ty = document.querySelector('input[name=ty]:checked').value, ed = $('#f_d');
+    if (!g('f_c') || !g('f_j') || !ed.textContent.trim()) return toast('Lengkapi kategori, judul & deskripsi', 1);
+    let ds = san(ed.innerHTML); if (ty == 'request' && g('f_jj')) ds += '<p><b>Justifikasi:</b> ' + esc(g('f_jj')) + '</p>';
+    const x = await db.ins('tickets', { tipe: ty, judul: g('f_j'), deskripsi: ds, kategori: g('f_c'), subkategori: g('f_s'), prioritas: pr, status: 'open', requester_id: S.u.id, asset_id: am ? am.id : null, aset_manual: am ? null : (av || null), lokasi: g('f_l') || S.u.lokasi || null, due_resolusi: new Date(Date.now() + SLA[pr] * 36e5).toISOString() });
+    if (S.ph.length) await saveFotos(x.id); toast('Tiket ' + x.no_tiket + ' berhasil dibuat'); go('tk', { id: x.id });
+  },
+  reply: async d => { const v = $('#rp').value.trim(); if (!v) return toast('Isi balasan kosong', 1); const i = document.querySelector('input[name=rt]:checked'); const c = await db.ins('ticket_comments', { ticket_id: +d.id, author_id: S.u.id, isi: v, is_internal: !!(i && i.value == '1') }); if (S.ph.length) await saveFotos(+d.id, c.id); toast('Balasan terkirim'); view(); },
+  stok: async d => { const n = $('#sn').value.trim(); if (!n) return toast('Catatan wajib diisi', 1); closeM(); await setSt(+d.id, d.s, n); },
+  asgm: d => modal(`<h3>Tugaskan Tiket</h3><select id=as>${staff().map(u => `<option value=${u.id}>${esc(u.nama)} (${S.T.filter(t => t.assignee_id == u.id && !FIN.includes(t.status)).length} aktif)`).join('')}</select><textarea id=ar rows=2 placeholder="Alasan (wajib jika tugaskan ulang)"></textarea><div class=row><button class="btn g2" data-a=cm>Batal</button><button class=btn data-a=asg data-id=${d.id}>Tugaskan</button></div>`),
+  asg: async d => { const a = +$('#as').value, r = $('#ar').value.trim(), t = S.T.find(x => x.id == d.id); if (t.assignee_id && !r) return toast('Alasan wajib diisi', 1); const u = { assignee_id: a }; if (t.status == 'open') u.status = 'progress'; await db.upd('tickets', t.id, u); await db.ins('ticket_comments', { ticket_id: t.id, author_id: S.u.id, isi: `Ditugaskan ke ${N[a]}${r ? ': ' + r : ''}`, is_internal: true }); closeM(); toast('Tiket ditugaskan'); view(); },
+  close: d => setSt(+d.id, 'closed'), reopen: d => setSt(+d.id, 'open', 'dibuka kembali oleh pemohon'),
+  star: d => { S.star = +d.n; paintS(); },
+  rate: async d => { await db.ins('csat_ratings', { ticket_id: +d.id, rating: S.star, komentar: $('#rc').value.trim() || null }); closeM(); toast('Terima kasih atas ulasan Anda'); view(); },
+  ka: d => { const a = S.K.find(x => x.id == d.id); modal(`<h3>${esc(a.judul)}</h3><p style=white-space:pre-wrap>${esc(a.isi)}</p><div class=row><button class="btn g2" data-a=cm>Tutup</button></div>`); },
+  fa: d => {
+    const c = CFG[d.n], r = d.id ? S.R[c.t].find(x => x.id == d.id) : {};
+    modal(`<h3>${d.id ? 'Edit' : 'Tambah'} ${c.title}</h3>${c.f.map(([k, l, ty, o]) => `<label>${l}</label>${ty == 'select' ? `<select data-f=${k}>${o.map(v => `<option ${String(r[k]) == v ? 'selected' : ''}>${v}`).join('')}</select>` : ty == 'textarea' ? `<textarea data-f=${k} rows=5>${esc(r[k])}</textarea>` : `<input data-f=${k} type=${ty || 'text'} value="${k == 'password_hash' ? '' : esc(r[k])}" ${k == 'password_hash' ? `placeholder="${d.id ? 'Kosongkan jika tidak diubah' : 'Password'}"` : ''}>`}`).join('')}<div class=row><button class="btn g2" data-a=cm>Batal</button><button class=btn data-a=fs data-n=${d.n} data-id="${d.id || ''}">Simpan</button></div>`);
+  },
+  fs: async d => {
+    const c = CFG[d.n], o = {}; document.querySelectorAll('#M [data-f]').forEach(e => { const k = e.dataset.f, f = c.f.find(x => x[0] == k); let v = e.value.trim(); if (k == 'aktif') v = v == 'true'; else if (f[2] == 'number') v = v ? +v : null; else if (v == '') v = null; o[k] = v; });
+    if (d.id && o.password_hash == null) delete o.password_hash;
+    if (c.req.some(k => !o[k]) || (d.n == 'users' && !d.id && !o.password_hash)) return toast('Lengkapi data wajib', 1);
+    if (d.n == 'kb' && !o.kategori) o.kategori = 'Lainnya';
+    d.id ? await db.upd(c.t, +d.id, o) : await db.ins(c.t, o); S.U = null; closeM(); toast('Data tersimpan'); view();
+  },
+  fdl: async d => { if (!confirm('Hapus data ini?')) return; await db.del(CFG[d.n].t, +d.id); toast('Data dihapus'); view(); }
+};
+const C = {
+  q: v => { S.q = v; view(); }, pr: v => { S.pr = v; view(); }, cat: v => { S.cat = v; view(); }, ag: v => { S.ag = v; view(); }, kq: v => { S.kq = v; view(); },
+  pick: async (v, el) => { try { for (const f of [...el.files]) { if (S.ph.length >= 5) { toast('Maksimal 5 foto', 1); break; } const b = await shrink(f); S.ph.push({ n: f.name, b, u: URL.createObjectURL(b) }); } } catch (x) { toast(x.message, 1); } el.value = ''; $('#phl').innerHTML = `<div class=ph>${phH()}</div>`; },
+  st: (v, el) => stSet(+el.dataset.id, v), ty: v => $('#f_jw').hidden = v != 'request',
+  fc: v => {
+    $('#f_s').innerHTML = (CATS[v] || []).map(s => `<option>${s}`).join(''); $('#f_lw').hidden = !['Jaringan', 'Hardware', 'Printer'].includes(v);
+    const k = (S.K || []).filter(a => a.kategori == v).slice(0, 3); $('#kbs').innerHTML = k.length ? `<div class=card style="background:#F0FDF4;margin-bottom:10px"><b>💡 Mungkin membantu:</b>${k.map(a => `<div><a data-a=ka data-id=${a.id} style="color:#2563EB;cursor:pointer">${esc(a.judul)}</a></div>`).join('')}</div>` : '';
+  }
+};
+const I = { ks: v => { const k = v.trim().toLowerCase(), L = k ? (S.K || []).filter(a => (a.judul + a.isi).toLowerCase().includes(k)).slice(0, 5) : []; $('#ksr').innerHTML = k ? `<div class=card style=margin-bottom:8px>${L.map(a => `<div class=sg data-a=ka data-id=${a.id}>📖 ${esc(a.judul)}</div>`).join('')}<div class=sg data-a=newt data-t=incident>➕ Tidak ketemu? <b>Buat Tiket</b></div></div>` : ''; } };
+root.addEventListener('click', async e => { if (!e.target.closest('.pf,.dd')) $('#dd')?.classList.remove('sh'); const t = e.target.closest('[data-a]'); if (!t) return; if (t.classList.contains('ov') && e.target != t) return; try { await A[t.dataset.a]?.(t.dataset, t, e); } catch (x) { toast(x.message || 'Terjadi kesalahan', 1); } });
+root.addEventListener('change', e => { const t = e.target; if (t.dataset.c) try { C[t.dataset.c](t.value, t); } catch (x) { toast(x.message, 1); } });
+root.addEventListener('input', e => { if (e.target.dataset.i) I[e.target.dataset.i](e.target.value); });
+root.addEventListener('keydown', e => { if (e.key == 'Enter' && e.target.id == 'lp') A.login(); });
+root.addEventListener('dragstart', e => { const c = e.target.closest('[data-drag]'); if (c) e.dataTransfer.setData('t', c.dataset.drag); });
+root.addEventListener('dragover', e => { if (e.target.closest('[data-drop]')) e.preventDefault(); });
+root.addEventListener('drop', e => { const c = e.target.closest('[data-drop]'); if (!c) return; e.preventDefault(); const id = +e.dataTransfer.getData('t'), t = S.T.find(x => x.id == id); if (t && t.status != c.dataset.drop) stSet(id, c.dataset.drop); });
+if (S.u) S.v = S.u.role == 'enduser' ? 'home' : 'dash'; draw();
+</script></body></html>
