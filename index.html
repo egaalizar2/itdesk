@@ -209,7 +209,7 @@ async function crud(n) {
 const V = { home, new: newF, mine: tickets, tickets, sla: tickets, dash, csat, kb, users: () => crud('users'), assets: () => crud('assets'), tk: detail, load: async () => `<h1><i data-lucide=users></i> BEBAN KERJA TEKNISI</h1><div class=card>${bars(await loadT())}</div>` };
 
 // ===== Shell =====
-const loginH = () => `<div class=lg><div class="card lc"><div class=lgo><img src="${LOGO}" alt=CGN><b>IT Desk</b><small>CGN System</small></div><input id=lu placeholder="Username / NIK"><input id=lp type=password placeholder=Password><button class=btn style=width:100% data-a=login>Masuk</button>${IS_PREVIEW ? `<p><span class=pv>Mode Preview Aktif</span></p><small>Quick Login:</small><div class=row style=justify-content:center;flex-wrap:wrap>${Object.keys(RL).map(r => `<button class="btn g2" data-a=qlogin data-r=${r}>${RL[r]}</button>`).join('')}</div>` : ''}</div></div>`;
+const loginH = () => `<div class=lg><div class="card lc"><div class=lgo><img src="${LOGO}" alt=CGN><b>IT Desk KU</b><small>CGN System</small></div><input id=lu placeholder="Username / NIK"><input id=lp type=password placeholder=Password><button class=btn style=width:100% data-a=login>Masuk</button>${IS_PREVIEW ? `<p><span class=pv>Mode Preview Aktif</span></p><small>Quick Login:</small><div class=row style=justify-content:center;flex-wrap:wrap>${Object.keys(RL).map(r => `<button class="btn g2" data-a=qlogin data-r=${r}>${RL[r]}</button>`).join('')}</div>` : ''}</div></div>`;
 function draw() {
   if (!S.u) { root.innerHTML = loginH(); icons(); return; }
   const mn = MN[S.u.role], gs = [...new Set(mn.map(i => i[3]))], ini = S.u.nama.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
